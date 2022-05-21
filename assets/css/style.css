@@ -5,6 +5,8 @@
     --color-salmon: #F55556;
     --color-white: #fff;
     --color-secondary-background: #FEF5F5;
+    --color-button-hover: rgb(236, 234, 76);
+    --transition: background-color 0.2s ease-in-out;
 }
 
 /*zerar css */
@@ -76,7 +78,6 @@ h4 {
 
 .section {
     min-height: 100vh;
-    padding: 10rem;
 }
 
 .secondary-background {
@@ -102,20 +103,21 @@ Nav-Bar
 */
 
 .hamburguer-menu {
-    position: absolute;
+    position: fixed;
     top: 1rem;
     font-size: 5rem;
     color: var(--color-salmon);
     display: none;
     right: 4rem;
-    z-index: 10;
+    z-index: 3;
 }
 
 .logo-icon {
-    position: absolute;
+    position: fixed;
     top: 2.3rem;
     left: 5rem;
     display: none;
+    z-index: 2;
 }
 
 .logo {
@@ -129,11 +131,10 @@ Nav-Bar
 .menu {
     position: absolute;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
     height: 15rem;
-    padding: 5rem 13rem;
     background-color: var(--color-white);
     z-index: 1;
 }
@@ -173,11 +174,12 @@ Nav-Bar
 }
 
 .menu-search {
+    position: relative;
     width: 40rem;
     height: 5rem;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1.8rem;
     align-items: center;
     border-radius: 10rem;
 }
@@ -185,14 +187,18 @@ Nav-Bar
 .menu-search input {
     border: none;
     height: 4rem;
-    font-size: 1.8rem;
+    max-width: 27rem;
+    width: 100%;
+    font-size: 1.7rem;
     color: #232323;
-    box-shadow: 0px 2.6rem 6.6rem rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2.6rem 6.6rem rgba(0, 0, 0, 0.04);
     border-right: 0.2rem solid #F2F2F2;
 }
-::placeholder{
+
+::placeholder {
     color: #232323;
 }
+
 .menu-search input:focus::placeholder {
     color: transparent;
 }
@@ -208,11 +214,11 @@ Nav-Bar
 }
 
 .menu-cart-items {
-    position: relative;
+    position: absolute;
     width: 3.7rem;
     height: 3.7rem;
-    right: 1rem;
-    top: -3rem;
+    right: -2rem;
+    top: -2rem;
     background: #F54B4B;
     border-radius: 50%;
     display: flex;
@@ -242,14 +248,6 @@ Flex Template
     min-height: 100vh;
 }
 
-.flex-template-b {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15rem;
-    min-height: 100vh;
-}
 
 .flex-template-column {
     display: flex;
@@ -299,64 +297,88 @@ Buttons-Template
     width: 100%;
 }
 
-.button-template {
+.button-template-transparent {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    max-width: 28rem;
+    max-width: 26rem;
     width: 100%;
     height: 10rem;
     border: 0.2rem solid #EEDCDC;
     border-radius: 1.6rem;
     cursor: pointer;
+    color: var(--color-p);
+    font-size: 2.4rem;
 }
 
-.button-template:hover {
-    border: 0.2rem solid var(--color-h);
+.button-template-transparent-b { 
+    border: 0.2rem solid #F86061;
+    color: #F86061;
+}
+
+.button-template-transparent-b:hover, .button-template-transparent:hover{
+    border: 0.2rem solid var(--color-button-hover);
+    color: var(--color-button-hover);
+}
+
+.button-template-salmon {
+    background: #F86061;
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+.button-template-salmon:hover {
+    background-color: var(--color-button-hover);
+    color: var(--color-white);
 }
 
 .button-template-plus {
     width: 4.8rem;
     height: 4.8rem;
     background-color: var(--color-salmon);
-    box-shadow: 0px 21.3333px 40px rgba(245, 71, 72, 0.15);
-    border-radius: 10.6667px;
+    box-shadow: 0 2.1rem 4rem rgba(245, 71, 72, 0.15);
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: var(--transition);
 }
-
-
 
 .button-template-plus:hover {
-    border: 0.2rem solid var(--color-h);
+    background-color: var(--color-button-hover);
 }
 
-.button-template-salmon {
+
+/* 
+
+Button Play
+
+*/
+
+.button-play{
+    max-width: 9.3rem;
+    max-height: 9.3rem;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    width: 28rem;
-    height: 10rem;
-    border-radius: 1.6rem;
-    background: #F86061;
-    cursor: pointer;
+    justify-content: center;
+    background-color: var(--color-white);
+    box-shadow: 0 2.6rem 6.5rem -1.3rem rgba(0, 0, 0, 0.08);
 }
 
-.button-template-salmon:hover {
-    border: 0.3rem solid var(--color-h);
+.button-play img{
+    position: relative;
+    top: 1rem;
 }
 
 /*
 
-///////////////////////////////////////////////////////////////////////////////
-
 Button More Than Faster
-
-///////////////////////////////////////////////////////////////////////////////
 
 */
 
@@ -369,15 +391,12 @@ Button More Than Faster
     align-items: center;
     justify-content: center;
     margin-bottom: 2rem;
+    font-size: 2.0rem;
+    color: #F55556;
     cursor: pointer;
 }
 
-.button-more-than-faster p {
-    font-size: 2.1rem;
-    color: #F55556;
-}
-
-.button-more-than-faster p:hover {
+.button-more-than-faster:hover {
     color: var(--color-p);
 }
 
@@ -388,11 +407,7 @@ Button More Than Faster
 
 /*
 
-///////////////////////////////////////////////////////////////////////////////
-
 Button Order Process
-
-///////////////////////////////////////////////////////////////////////////////
 
 */
 
@@ -400,9 +415,13 @@ Button Order Process
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    gap: 1rem;
+    max-width: 30rem;
+    width: 100%;
     height: 10rem;
     cursor: pointer;
+    font-size: 2.4rem;
+    color: #363636;
 }
 
 /*
@@ -422,6 +441,7 @@ Section - Home
     height: 65rem;
     display: flex;
     flex-wrap: wrap;
+    gap: 3rem;
     justify-content: space-between;
     align-items: center;
 }
@@ -447,12 +467,18 @@ Section - Home
     width: 6.4rem;
     height: 6.4rem;
     background: linear-gradient(180deg, #FF7071 0%, #E73D3E 100%);
-    box-shadow: 0 -0.8rem 5.3rem rgba(235, 69, 70, 0.2);
+    box-shadow: 0 0.8rem 1.5rem rgba(235, 69, 70, 0.2);
     border-radius: 1.3rem;
     display: flex;
     align-items: center;
     justify-items: content;
     cursor: pointer;
+    transition: var(--transition);
+
+}
+
+.button-cart:hover {
+    background: var(--color-button-hover);
 }
 
 .product-box-small-info {
@@ -507,7 +533,7 @@ Section - Home
     top: -15rem;
     width: 21rem;
     height: 9.8rem;
-    background: var(--color-white);
+    background:var(--color-white);
     box-shadow: 0 5.3rem 9.3rem -1.3rem rgba(0, 0, 0, 0.08);
     border-radius: 1.6rem;
     display: flex;
@@ -517,7 +543,8 @@ Section - Home
 }
 
 .box-delivery-info {
-    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .box-delivery h4 {
@@ -534,12 +561,12 @@ Section - Home
     font-size: 1.6rem;
     font-weight: 500;
     text-align: left;
-
 }
 
 .arrow-abstract {
     position: absolute;
     right: 0;
+    top: 22rem;
     transform: rotate(5deg);
     z-index: -2;
 }
@@ -566,7 +593,7 @@ Section - What We Serve
     justify-content: space-around;
     align-items: center;
     gap: 6.5rem;
-    z-index: 10;
+    z-index: 0;
 }
 
 .grid-what-we-serve {
@@ -670,6 +697,11 @@ Section - What We Serve
     position: absolute;
     bottom: 0;
     left: 3rem;
+    animation: rotate 8s infinite;
+}
+
+@keyframes rotate {
+    100% {transform: rotate(360deg);}
 }
 
 /* 
@@ -688,8 +720,8 @@ Section - What We Serve
     right: -7rem;
     height: 36rem;
     width: 27rem;
-    background: #FFF;
-    box-shadow: 0px 80px 133.333px -13.3333px rgba(86, 0, 0, 0.08);
+    background: var(--color-white);
+    box-shadow: 0 0.8rem 13.3rem -1.3rem rgba(86, 0, 0, 0.08);
     border-radius: 1.6rem;
     display: flex;
     flex-direction: column;
@@ -855,6 +887,8 @@ Section - What We Serve
 
     #toogle:checked+.menu {
         display: flex;
+        position: fixed;
+        z-index: 2;
     }
 
     .menu {
@@ -863,6 +897,7 @@ Section - What We Serve
         justify-content: space-around;
         height: 100vh;
         background-color: var(--color-white);
+        
     }
 
     .menu ul {
@@ -887,22 +922,17 @@ Section - What We Serve
     }
 
     .content .title {
-        font-size: 40px;
+        font-size: 4rem;
         font-weight: 700;
     }
 
     .content p {
-        font-size: 35px;
+        font-size: 3.5rem;
         font-weight: 600;
     }
 
 
     .flex-template {
-        flex-wrap: wrap;
-        gap: 0;
-    }
-
-    .flex-template-b {
         flex-wrap: wrap;
         gap: 0;
     }
@@ -913,18 +943,28 @@ Section - What We Serve
     }
 
     .buttons-area {
+        margin-top: 0;
         justify-content: center;
         flex-wrap: wrap;
         gap: 1rem;
     }
 
+    .button-more-than-faster{
+        margin-top: 2rem;
+    }
+
     .button-template-salmon,
-    .button-template {
+    .button-template-transparent, .button-template-transparent-b {
         height: 7rem;
+    }
+
+    .button-order-process{
+        display: none;
     }
 
     .float-box-position {
         position: relative;
+        height: 50rem;
         justify-content: center;
     }
 
@@ -991,7 +1031,7 @@ Section - What We Serve
         padding: 0.8rem 1.2rem;
         cursor: pointer;
         border-radius: 1.6rem;
-        z-index: 10;
+        z-index: 0;
     }
 
 }
