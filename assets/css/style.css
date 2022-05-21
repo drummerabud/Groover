@@ -5,7 +5,7 @@
     --color-salmon: #F55556;
     --color-white: #fff;
     --color-secondary-background: #FEF5F5;
-    --color-button-hover: rgb(236, 234, 76);
+    --color-button-hover: #FECF47;
     --transition: background-color 0.2s ease-in-out;
 }
 
@@ -120,8 +120,13 @@ Nav-Bar
     z-index: 2;
 }
 
-.logo {
-    display: block;
+.logo-tittle {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    font-size: 3.5rem;
+    font-weight: 700;
 }
 
 #toogle {
@@ -311,6 +316,7 @@ Buttons-Template
     cursor: pointer;
     color: var(--color-p);
     font-size: 2.4rem;
+    transition: var(--transition);
 }
 
 .button-template-transparent-b {
@@ -318,7 +324,6 @@ Buttons-Template
     color: #F86061;
 }
 
-.button-template-transparent-b:hover,
 .button-template-transparent:hover {
     border: 0.2rem solid var(--color-button-hover);
     color: var(--color-button-hover);
@@ -327,7 +332,14 @@ Buttons-Template
 .button-template-salmon {
     background: #F86061;
     color: var(--color-white);
-    transition: var(--transition);
+}
+
+.button-template-app{
+    color: var(--color-p);
+}
+
+.button-template-app:hover{
+    color: var(--color-button-hover);
 }
 
 .button-template-salmon:hover {
@@ -468,7 +480,7 @@ Section - Home
     bottom: -3rem;
     width: 6.4rem;
     height: 6.4rem;
-    background: linear-gradient(180deg, #FF7071 0%, #E73D3E 100%);
+    background-color: var(--color-salmon);
     box-shadow: 0 0.8rem 1.5rem rgba(235, 69, 70, 0.2);
     border-radius: 1.3rem;
     display: flex;
@@ -480,7 +492,7 @@ Section - Home
 }
 
 .button-cart:hover {
-    background: var(--color-button-hover);
+    background-color: var(--color-button-hover);
 }
 
 .product-box-small-info {
@@ -770,7 +782,7 @@ Section - What We Serve
 .product-price p {
     font-weight: 700;
     font-size: 3rem;
-    color: #2E2E2E;
+    color: var(--color-h);
 }
 
 /*
@@ -884,6 +896,10 @@ Section - What We Serve
         display: block;
     }
 
+    .logo-tittle{
+        font-size: 3rem;
+    }
+
     .menu-search {
         width: 30rem;
     }
@@ -897,6 +913,7 @@ Section - What We Serve
         display: flex;
         position: fixed;
         z-index: 2;
+        justify-content: space-evenly;
     }
 
     .menu {
@@ -961,9 +978,7 @@ Section - What We Serve
         margin-top: 2rem;
     }
 
-    .button-template-salmon,
-    .button-template-transparent,
-    .button-template-transparent-b {
+    .button-template-transparent{
         height: 7rem;
     }
 
