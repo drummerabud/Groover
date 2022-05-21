@@ -175,7 +175,8 @@ Nav-Bar
 
 .menu-search {
     position: relative;
-    width: 40rem;
+    max-width: 40rem;
+    width: 100%;
     height: 5rem;
     display: flex;
     justify-content: center;
@@ -312,12 +313,13 @@ Buttons-Template
     font-size: 2.4rem;
 }
 
-.button-template-transparent-b { 
+.button-template-transparent-b {
     border: 0.2rem solid #F86061;
     color: #F86061;
 }
 
-.button-template-transparent-b:hover, .button-template-transparent:hover{
+.button-template-transparent-b:hover,
+.button-template-transparent:hover {
     border: 0.2rem solid var(--color-button-hover);
     color: var(--color-button-hover);
 }
@@ -357,7 +359,7 @@ Button Play
 
 */
 
-.button-play{
+.button-play {
     max-width: 9.3rem;
     max-height: 9.3rem;
     border-radius: 50%;
@@ -371,7 +373,7 @@ Button Play
     box-shadow: 0 2.6rem 6.5rem -1.3rem rgba(0, 0, 0, 0.08);
 }
 
-.button-play img{
+.button-play img {
     position: relative;
     top: 1rem;
 }
@@ -533,7 +535,7 @@ Section - Home
     top: -15rem;
     width: 21rem;
     height: 9.8rem;
-    background:var(--color-white);
+    background: var(--color-white);
     box-shadow: 0 5.3rem 9.3rem -1.3rem rgba(0, 0, 0, 0.08);
     border-radius: 1.6rem;
     display: flex;
@@ -701,7 +703,9 @@ Section - What We Serve
 }
 
 @keyframes rotate {
-    100% {transform: rotate(360deg);}
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* 
@@ -880,6 +884,10 @@ Section - What We Serve
         display: block;
     }
 
+    .menu-search {
+        width: 30rem;
+    }
+
     .hamburguer-menu {
         display: block;
         cursor: pointer;
@@ -897,7 +905,7 @@ Section - What We Serve
         justify-content: space-around;
         height: 100vh;
         background-color: var(--color-white);
-        
+
     }
 
     .menu ul {
@@ -907,7 +915,7 @@ Section - What We Serve
     }
 
     .menu ul li a {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .content {
@@ -949,16 +957,17 @@ Section - What We Serve
         gap: 1rem;
     }
 
-    .button-more-than-faster{
+    .button-more-than-faster {
         margin-top: 2rem;
     }
 
     .button-template-salmon,
-    .button-template-transparent, .button-template-transparent-b {
+    .button-template-transparent,
+    .button-template-transparent-b {
         height: 7rem;
     }
 
-    .button-order-process{
+    .button-order-process {
         display: none;
     }
 
